@@ -5,12 +5,14 @@ with open('devices.json', 'r') as f:
 
 
 def main():
-    us_input = input('Введите имя устройства - ')
-    try:
-        print(content[us_input])
-    except KeyError:
-        print('incorrect input')
-        quit()
+    while True:
+        us_input = input('Введите имя устройства - ')
+        us_input_par = input('Введите имя параметра - ')
+        try:
+            print(content[us_input][us_input_par])
+        except KeyError:
+            print('incorrect input')
+            continue
 
 
 if __name__ == '__main__':
